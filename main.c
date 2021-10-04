@@ -20,7 +20,7 @@ int main()
 	//Check condition 2
 	assert(!battery_check_temperature_ok(50));
 	assert(!battery_check_state_of_charge_ok(85));
-	assert(!battery_check_charge_rate_ok(0));
+	assert(battery_check_charge_rate_ok(0));
 	
 	
   	
