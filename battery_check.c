@@ -60,6 +60,7 @@ int battery_check_over_charge(float batteryVoltage)
 		ret_val = 0;
 	}
 	
+	return ret_val;	
 }
 
 
