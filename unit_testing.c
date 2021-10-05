@@ -27,6 +27,11 @@ static void TEST_battery_check_over_charge(void)
 	assert(!battery_check_over_charge(5));
 }
 
+static void TEST_battery_check_over_discharge(void)
+{
+	assert(!battery_check_over_discharge(2));	
+}
+
 
 void run_unit_tests(void)
 {
@@ -34,4 +39,5 @@ void run_unit_tests(void)
 	TEST_battery_check_state_of_charge_ok();
 	TEST_battery_check_charge_rate_ok();
 	TEST_battery_check_over_charge();
+	TEST_battery_check_over_discharge();
 }

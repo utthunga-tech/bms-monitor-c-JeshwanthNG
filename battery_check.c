@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #define MAX_BATTERY_VOLTAGE (4.3)
+#define MIN_BATTERY_VOLTAGE (2.3)
 
 
 // REFERENCE : https://www.electronics-notes.com/articles/electronic_components/battery-technology/li-ion-lithium-ion-charging.php#:~:text=Constant%20current%20charge:%20In%20the%20first%20stage%20of,rate%20of%20a%20maximum%20of%200.8C%20is%20recommended.
@@ -56,7 +57,20 @@ int battery_check_over_charge(float batteryVoltage)
 	
 	if(batteryVoltage > MAX_BATTERY_VOLTAGE)
 	{
-		printf("Battery over charged, turn off!\n");
+		printf("Battery over charged!\n");
+		ret_val = 0;
+	}
+	
+	return ret_val;	
+}
+
+int battery_check_over_discharge(float batteryVoltage)
+{
+	int ret_val = 1; 
+	
+	if(batteryVoltage < MIN_BATTERY_VOLTAGE)
+	{
+		printf("Battery over discharged!\n");
 		ret_val = 0;
 	}
 	

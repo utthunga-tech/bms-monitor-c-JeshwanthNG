@@ -5,6 +5,7 @@ int battery_check_temperature_ok(int temperature);
 int battery_check_state_of_charge_ok(float soc);
 int battery_check_charge_rate_ok(float chargeRate);
 int battery_check_over_charge(float batteryVoltage);
+int battery_check_over_discharge(float batteryVoltage);
 
 
 
